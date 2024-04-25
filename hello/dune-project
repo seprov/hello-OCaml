@@ -7,9 +7,9 @@
 (source
  (github username/reponame))
 
-(authors "Author Name")
+(authors "seprov")
 
-(maintainers "Maintainer Name")
+(maintainers "seprov")
 
 (license LICENSE)
 
@@ -17,10 +17,10 @@
 
 (package
  (name hello)
- (synopsis "A short synopsis")
- (description "A longer description")
+ (synopsis "From the ocaml.org tutorial")
+ (description "This project is just from the ocaml.org hello world tutorial")
  (depends ocaml dune)
  (tags
-  (topics "to describe" your project)))
+  ("hello world" project)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
