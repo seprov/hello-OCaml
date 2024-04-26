@@ -1,6 +1,6 @@
-open Html_gen.Generate_body
+open Html_gen.Gen_page
 let () =
-  let html_output = Generate_body.gen "Hello, world!" in
+  let html_output = Generate_page.gen "Hello, world!" in
   print_endline html_output
 ;;
 let () =
@@ -13,7 +13,7 @@ let () =
   if not (Sys.file_exists directory) then Unix.mkdir directory 0o755;
 
   (* Generate the HTML content *)
-  let html_output = Generate_body.gen "Hello, world!" in
+  let html_output = Generate_page.gen "Hello, world!" in
 
   (* Open a file in write mode *)
   let oc = open_out path in
