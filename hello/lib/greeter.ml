@@ -4,4 +4,3 @@ module Greeter : sig
 end = struct
   let greet (module G : Greeting) = Printf.printf "%s\n" G.v
 end
-;;
