@@ -1,4 +1,4 @@
 (executable
  (public_name html_gen)
  (name main)
- (libraries html_gen unix))
+ (libraries generators file_interactors unix))
