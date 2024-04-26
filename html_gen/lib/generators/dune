@@ -1,2 +1,3 @@
 (library
- (name generators))
+ (name generators)
+ (libraries unix file_interactors))

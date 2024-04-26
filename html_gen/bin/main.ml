@@ -1,6 +1,8 @@
-open Generators.Gen_page
+open Generators.Generate_photo_gallery
+open File_interactors.Save_file
+let photo_dir = "./test_photos";;
 
-let html_output = Generate_page.gen "Hello, world!";;
+let html_output = generate_photo_gallery photo_dir;;
 
 let () =
   print_endline html_output
@@ -12,7 +14,7 @@ let () =
   let file_name = "output.html" in
   
   (* Generate the HTML content *)
-  let html_output = Generate_page.gen "Hello, world!" in
+  let html_output = generate_photo_gallery photo_dir in
   
-  File_interactors.File_saver.save directory file_name html_output
+  save_file directory file_name html_output
 ;;

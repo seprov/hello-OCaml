@@ -1,4 +1,4 @@
-let save directory file_name file_contents = 
+let save_file directory file_name file_contents = 
   let path = Filename.concat directory file_name in
 
   (* Ensure the directory exists *)
