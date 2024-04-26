@@ -2,7 +2,7 @@
 
 Learning OCaml
 
-## Greeting
+## [Greeting](hello/lib/greeting_sig.ml)
 
 Just specifies the "Hello world!" greeting in a language.
 
@@ -14,6 +14,6 @@ Just specifies the "Hello world!" greeting in a language.
 * [en.ml](hello/lib/en.ml)
 * [es.ml](hello/lib/es.ml)
 
-## Greeter
+## [Greeter](hello/lib/greeter.ml)
 
 Given a `Greeting`, prints it.
