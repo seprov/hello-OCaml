@@ -1,3 +1,5 @@
-let () = Printf.printf "%s\n" Hello.En.v  
-(* I guess capitalization of project and module names 
- * is inferred and required? *)
+open Hello.Greeter;;
+
+Printf.printf "\n";;
+Greeter.greet(module Hello.Es.Es);;
+Greeter.greet(module Hello.En.En);;
