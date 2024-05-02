@@ -1,1 +1,1 @@
-val generate_photo_gallery : string -> string
+val generate_photo_gallery : string -> bool -> string

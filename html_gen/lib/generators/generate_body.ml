@@ -1,9 +1,15 @@
 open Generate_image_links
 
-let generate_row row = "<h2>" ^ Filename.basename row ^ "</h><div class=\"scrollgallery\">" ^ generate_image_links row ^ "</div>"
+let generate_row row with_whitespace = 
+  (if with_whitespace then "\n\t\t" else "") ^ 
+  "<h2>" ^ Filename.basename row ^ "</h>"^
+  (if with_whitespace then "\n\t\t" else "") ^
+  "<div class=\"scrollgallery\">" ^ generate_image_links row with_whitespace ^
+  (if with_whitespace then "\n\t\t" else "") ^ 
+  "</div>"
 
-let generate_rows rows = 
-  List.map generate_row rows |> String.concat "\n"
+let generate_rows rows with_whitespace = 
+  List.map (fun row -> generate_row row with_whitespace) rows |> String.concat (if with_whitespace then "\n" else "")
 
 let map_clean_and_unclean_names unclean_names = List.map (fun unclean_name -> (Filename.basename unclean_name, unclean_name)) unclean_names
 
@@ -14,5 +20,9 @@ let sort_row_names rows =
 
 open File_interactors.List_directories
 
-let generate_body inner = "<body>" ^ generate_rows ((list_directories inner)) ^ "</body>"
+let generate_body inner with_whitespace = 
+  (if with_whitespace then "\n\t" else "") ^ 
+  "<body>" ^ generate_rows (list_directories inner) with_whitespace ^ 
+  (if with_whitespace then "\n\t" else "") ^ 
+  "</body>"
 
