@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(60,60,60);
+}
+a:link, a:visited {
+  color: rgb(210,200,250);
+}
+div.nav{
+  width: 90vw;
+  background-color: rgb(120,120,120);
+  font-size: 5vmax;
+}
+div.scrollgallery {
+  overflow: auto;
+  white-space: nowrap;
+}
+div.scrollgallery img {
+  display: inline-block;
+  padding-right: min(1vw, 8px);
+}
+h2 {
+  font-family: sans-serif;
+  color: rgb(240,240,240);
+  margin-bottom: 8px;
+}
+img{
+  max-width: 90vw;
+  height: min(60vw,85vh);
+}

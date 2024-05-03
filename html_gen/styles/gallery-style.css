@@ -1,0 +1,19 @@
+body {
+  background-color:rgb(60,60,60);
+}
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+div.scrollmenu img {
+  display: inline-block;
+  padding: 8px;
+}
+h2 {
+  font-family: sans-serif;
+  color: rgb(240,240,240);
+}
+img{
+    height:75%;
+    width:auto;
+}

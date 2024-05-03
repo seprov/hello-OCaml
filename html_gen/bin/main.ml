@@ -1,5 +1,6 @@
 open Generators.Generate_photo_gallery
 open File_interactors.Save_file
+open File_interactors.Copy_styles
 let photo_dir = "./test_photos";;
 let with_whitespace = true;;
 let html_output = generate_photo_gallery photo_dir with_whitespace;;
@@ -16,5 +17,6 @@ let () =
   (* Generate the HTML content *)
   let html_output = generate_photo_gallery photo_dir with_whitespace in
   
-  save_file directory file_name html_output
-;;
+  save_file directory file_name html_output;;
+  copy_styles;;
+

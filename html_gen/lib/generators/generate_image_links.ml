@@ -4,7 +4,7 @@ let is_image_file file =
 
 let wrap_with_tag path with_whitespace =
   ((if with_whitespace then "\n\t\t\t" else "") ^ 
-  "<img src=\""^ path ^"\"/>") 
+  "<img src=\""^ "." ^ path ^"\"/>") 
 
 let generate_image_links given_dir with_whitespace =
   let files_names = Array.to_list (Sys.readdir given_dir) in
