@@ -6,7 +6,7 @@ Learning OCaml
 
 This project generates web gallery pages just like the ones on [seprov.com](seprov.com).
 
-To use it, you need to layers of folders -- a parent folder for the page, and a subfolder for each row of photos in the gallery.
+To use it, you need two layers of folders -- a parent folder for the page, and a subfolder for each row of photos in the gallery.
 
 Edit [main.ml](/html_gen/bin/main.ml#L4) to point to the parent folder. Run the program with `dune exec html_gen`.
 
