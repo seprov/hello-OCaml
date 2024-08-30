@@ -4,7 +4,7 @@ Learning OCaml
 
 ## [html_gen](/html_gen/)
 
-This project generates web gallery pages just like the ones on [seprov.com](seprov.com).
+This project generates web gallery pages just like the ones on [seprov.com](http://seprov.com).
 
 To use it, you need two layers of folders -- a parent folder for the page, and a subfolder for each row of photos in the gallery.
 
