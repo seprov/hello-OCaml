@@ -1,2 +1,4 @@
 (test
- (name test_exercises))
+ (name test_exercises)
+ (libraries exercises)
+ (modules test_exercises tail_of_a_list_tests))
