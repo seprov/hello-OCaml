@@ -1,5 +1,5 @@
 (* https://ocaml.org/exercises *)
-open Exercises.Tail_of_a_list
+open Exercises.List_exercises
 
 let () =
   match last [ "a"; "b"; "c" ] with

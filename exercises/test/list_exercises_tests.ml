@@ -1,4 +1,4 @@
-open Exercises.Tail_of_a_list
+open Exercises.List_exercises
 
 let () = match last [ "a"; "b"; "c" ] with Some "c" -> exit 0 | _ -> exit 1
 let () = match last [] with None -> exit 0 | _ -> exit 1
@@ -9,3 +9,9 @@ let () =
   | _ -> exit 1
 
 let () = match last_two [ "a" ] with None -> exit 1 | _ -> exit 1
+
+let () =
+  match nth [ "a"; "b"; "c"; "d"; "e" ] 2 with
+  | Some "c" -> exit 0
+  | _ -> exit 1
+let () = match nth [ "a" ] 2 with None -> exit 0 | _ -> exit 2

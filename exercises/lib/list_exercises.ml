@@ -5,3 +5,7 @@ let rec last_two = function
   | [ x; y ] -> Some [ x; y ]
   | _ :: t -> last_two t
 
+let rec nth = function
+  | [], _ -> None
+  | x :: _, 0 -> Some x
+  | _ :: t, n -> nth (t, n - 1)
