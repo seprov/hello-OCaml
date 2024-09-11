@@ -81,3 +81,39 @@ let () =
   match remove_duplicates [ 1; 2; 3; 3 ] with
   | [ 1; 2; 3 ] -> print_endline "passed rempove_duplicates when some"
   | _ -> print_endline "failed"
+
+let () =
+  print_endline
+    (match encode_run_length [] with
+    | [] -> "passed encode_run_length empty"
+    | _ -> "failed")
+
+let () =
+  print_endline
+    (match encode_run_length [ 1 ] with
+    | [ (1, 1) ] -> "passed encode_run_length minimal"
+    | _ -> "failed")
+
+let () =
+  print_endline
+    (match encode_run_length [ 1; 1; 1; 1 ] with
+    | [ (4, 1) ] -> "passed encode_run_length a bit more, even"
+    | _ -> "failed")
+
+let () =
+  print_endline
+    (match encode_run_length [ 1; 1; 1 ] with
+    | [ (3, 1) ] -> "passed encode_run_length a bit more, odd"
+    | _ -> "failed")
+
+let () =
+  print_endline
+    (match
+       encode_run_length
+         [
+           "a"; "a"; "a"; "a"; "b"; "c"; "c"; "a"; "a"; "d"; "e"; "e"; "e"; "e";
+         ]
+     with
+    | [ (4, "a"); (1, "b"); (2, "c"); (2, "a"); (1, "d"); (4, "e") ] ->
+        "passed encode_run_length from site"
+    | _ -> "failed")

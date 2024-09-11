@@ -40,6 +40,7 @@ let rec contains = function
   | [], _ -> false
   | a :: b, x -> a == x || contains (b, x)
 
+(* i misread the problem... it was looking for consecutive duplicates... *)
 let remove_duplicates (input : 'a list) : 'a list =
   let rec aux = function
     | [], _ -> []
@@ -49,3 +50,18 @@ let remove_duplicates (input : 'a list) : 'a list =
         | false -> [ a ] @ aux (b, contained @ [ a ]))
   in
   aux (input, [])
+
+let encode_run_length (input : 'a list) : (int * 'a) list =
+  match input with
+  | [] -> []
+  | _ ->
+      let rec aux = function
+        | [], (c : 'a), count -> [ (count, c) ]
+        | [ (x : 'a) ], (c : 'a), count -> (
+            match x == c with true -> [ (count, c) ] | _ -> [ (1, x) ])
+        | (a : 'a) :: (b : 'a) :: l, (c : 'a), count -> (
+            match a == b with
+            | true -> aux (b :: l, c, count + 1)
+            | false -> [ (count, c) ] @ aux (b :: l, List.nth (b :: l) 0, 1))
+      in
+      aux (input, List.nth input 0, 1)
