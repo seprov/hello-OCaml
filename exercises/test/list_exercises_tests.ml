@@ -21,3 +21,10 @@ let () = match length [ "a"; "b"; "c" ] with 3 -> exit 0 | _ -> exit 1
 
 let () =
   match rev [ "a"; "b"; "c" ] with [ "c"; "b"; "a" ] -> exit 0 | _ -> exit 1
+
+let () =
+  match is_palindrome [ "x"; "a"; "m"; "a"; "x" ] with
+  | true -> exit 0
+  | _ -> exit 1
+
+let () = match is_palindrome [ "x"; "a" ] with false -> exit 0 | _ -> exit 1

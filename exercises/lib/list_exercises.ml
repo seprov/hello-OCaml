@@ -14,4 +14,5 @@ let length l =
   let rec aux = function [], n -> n | _ :: t, n -> aux (t, n + 1) in
   aux (l, 0)
 
-let rec rev = function [] -> [] | (x : 'a) :: (t : 'a list) -> rev t @ [ x ]
+let rec rev = function [] -> [] | x :: t -> rev t @ [ x ]
+let is_palindrome l = l == rev l
