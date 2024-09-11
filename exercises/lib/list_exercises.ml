@@ -15,4 +15,21 @@ let length l =
   aux (l, 0)
 
 let rec rev = function [] -> [] | x :: t -> rev t @ [ x ]
-let is_palindrome l = l == rev l
+
+let is_palindrome l =
+  let rec aux = function
+    | [], [] -> true
+    | x :: y, a :: b -> x == a && aux (y, b)
+    | _ -> false
+  in
+  aux (l, rev l)
+
+type 'a node = One of 'a | Many of 'a node list
+
+let flatten (foo : 'a node list) : 'a list =
+  let rec aux = function
+    | [] -> []
+    | (x : 'a node) :: (y : 'a node list) -> (
+        match x with One a -> [ a ] @ aux y | Many aa -> aux aa @ aux y)
+  in
+  aux foo

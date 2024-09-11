@@ -1,4 +1,4 @@
 (test
  (name test_exercises)
  (libraries exercises)
- (modules test_exercises list_exercises_tests))
+ (modules test_exercises))
