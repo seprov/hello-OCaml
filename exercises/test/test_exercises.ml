@@ -66,3 +66,18 @@ let () =
   with
   | [ "a"; "b"; "c"; "d"; "e" ] -> print_endline "passed flatten"
   | _ -> print_endline "failed"
+
+let () =
+  match contains ([ 1; 2; 3 ], 2) with
+  | true -> print_endline "passed contains true"
+  | _ -> print_endline "failed"
+
+let () =
+  match remove_duplicates [ 1; 2; 3 ] with
+  | [ 1; 2; 3 ] -> print_endline "passed rempove_duplicates when none"
+  | _ -> print_endline "failed"
+
+let () =
+  match remove_duplicates [ 1; 2; 3; 3 ] with
+  | [ 1; 2; 3 ] -> print_endline "passed rempove_duplicates when some"
+  | _ -> print_endline "failed"

@@ -34,3 +34,18 @@ let flatten (foo : 'a node list) : 'a list =
         match x with One a -> [ a ] @ aux y | Many aa -> aux aa @ aux y)
   in
   aux foo
+
+(* quick and dirty, O(n)=n, doesn't return early *)
+let rec contains = function
+  | [], _ -> false
+  | a :: b, x -> a == x || contains (b, x)
+
+let remove_duplicates (input : 'a list) : 'a list =
+  let rec aux = function
+    | [], _ -> []
+    | a :: b, contained -> (
+        match contains (contained, a) with
+        | true -> aux (b, contained)
+        | false -> [ a ] @ aux (b, contained @ [ a ]))
+  in
+  aux (input, [])
