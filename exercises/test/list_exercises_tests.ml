@@ -18,3 +18,6 @@ let () =
 let () = match nth ([ "a" ], 2) with None -> exit 0 | _ -> exit 1
 let () = match length [] with 0 -> exit 0 | _ -> exit 1
 let () = match length [ "a"; "b"; "c" ] with 3 -> exit 0 | _ -> exit 1
+
+let () =
+  match rev [ "a"; "b"; "c" ] with [ "c"; "b"; "a" ] -> exit 0 | _ -> exit 1

@@ -13,3 +13,5 @@ let rec nth = function
 let length l =
   let rec aux = function [], n -> n | _ :: t, n -> aux (t, n + 1) in
   aux (l, 0)
+
+let rec rev = function [] -> [] | (x : 'a) :: (t : 'a list) -> rev t @ [ x ]
