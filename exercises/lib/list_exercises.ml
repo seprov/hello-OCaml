@@ -20,7 +20,7 @@ let is_palindrome l =
   let rec aux = function
     | [], [] -> true
     | x :: y, a :: b -> x == a && aux (y, b)
-    | _ -> false
+    | _ -> false (* this should never happen... do we need dependent types for that? *)
   in
   aux (l, rev l)
 
