@@ -9,3 +9,7 @@ let rec nth = function
   | [], _ -> None
   | x :: _, 0 -> Some x
   | _ :: t, n -> nth (t, n - 1)
+
+let length l =
+  let rec aux = function [], n -> n | _ :: t, n -> aux (t, n + 1) in
+  aux (l, 0)

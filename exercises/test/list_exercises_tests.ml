@@ -15,4 +15,6 @@ let () =
   | Some "c" -> exit 0
   | _ -> exit 1
 
-let () = match nth ([ "a" ], 2) with None -> exit 0 | _ -> exit 2
+let () = match nth ([ "a" ], 2) with None -> exit 0 | _ -> exit 1
+let () = match length [] with 0 -> exit 0 | _ -> exit 1
+let () = match length [ "a"; "b"; "c" ] with 3 -> exit 0 | _ -> exit 1
