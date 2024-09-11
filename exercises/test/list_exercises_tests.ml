@@ -11,7 +11,8 @@ let () =
 let () = match last_two [ "a" ] with None -> exit 1 | _ -> exit 1
 
 let () =
-  match nth [ "a"; "b"; "c"; "d"; "e" ] 2 with
+  match nth ([ "a"; "b"; "c"; "d"; "e" ], 2) with
   | Some "c" -> exit 0
   | _ -> exit 1
-let () = match nth [ "a" ] 2 with None -> exit 0 | _ -> exit 2
+
+let () = match nth ([ "a" ], 2) with None -> exit 0 | _ -> exit 2
