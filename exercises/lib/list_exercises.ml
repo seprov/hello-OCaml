@@ -56,10 +56,10 @@ let encode_run_length (input : 'a list) : (int * 'a) list =
   | [] -> []
   | _ ->
       let rec aux = function
-        | [], (c : 'a), count -> [ (count, c) ]
-        | [ (x : 'a) ], (c : 'a), count -> (
+        | [], c, count -> [ (count, c) ]
+        | [ x ], c, count -> (
             match x == c with true -> [ (count, c) ] | _ -> [ (1, x) ])
-        | (a : 'a) :: (b : 'a) :: l, (c : 'a), count -> (
+        | a :: b :: l, c, count -> (
             match a == b with
             | true -> aux (b :: l, c, count + 1)
             | false -> [ (count, c) ] @ aux (b :: l, List.nth (b :: l) 0, 1))
